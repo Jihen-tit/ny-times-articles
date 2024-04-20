@@ -1,26 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ArticlesContainer } from "./pages/articles.container";
+import { reduxStore } from "./redux-configuration/store";
+import { Provider } from "react-redux";
+import { ArticleDetails } from "./pages/article.details";
+
+export const store = reduxStore()
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    return (
+        <Provider store={store}>
+            <BrowserRouter>
+                <Routes>
+                    <Route index element={<ArticlesContainer/>}/>
+                    <Route path="/article/:id" element={<ArticleDetails/>}/>
+                </Routes>
+            </BrowserRouter>
+        </Provider>
+    );
 }
 
 export default App;
