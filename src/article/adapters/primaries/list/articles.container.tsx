@@ -22,7 +22,7 @@ export class ArticlesContainer extends PureComponent<Props> {
                     <h1>NY Times Popular articles</h1>
 
                     {this.props.loading && (
-                        <div>Loading...</div>
+                        <div data-testid={'loading'}>Loading...</div>
                     )}
 
                     <div className={"row"}>

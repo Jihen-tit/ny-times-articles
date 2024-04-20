@@ -1,7 +1,7 @@
 import { Observable, throwError } from "rxjs";
 import { Article } from "../../domain/entities/article";
 import { ArticleService } from "../../domain/gateway/article.service";
-import { ajax } from "rxjs/internal/ajax/ajax";
+import { ajax } from "rxjs/ajax";
 import { catchError, map } from "rxjs/operators";
 import { ArticleMapper } from "./mapper/article.mapper";
 import { ArticleDTO } from "./dto/article.dto";
