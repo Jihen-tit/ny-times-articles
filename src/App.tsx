@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { ArticlesContainer } from "./pages/articles.container";
 import { reduxStore } from "./redux-configuration/store";
 import { Provider } from "react-redux";
-import { ArticleDetails } from "./pages/article.details";
+import { ArticleDetails } from "./article/adapters/primaries/details/article.details";
+import { ArticlesPage } from "./article/adapters/primaries/list";
 
 export const store = reduxStore()
 
@@ -14,7 +14,7 @@ function App() {
         <Provider store={store}>
             <BrowserRouter>
                 <Routes>
-                    <Route index element={<ArticlesContainer/>}/>
+                    <Route index element={<ArticlesPage/>}/>
                     <Route path="/article/:id" element={<ArticleDetails/>}/>
                 </Routes>
             </BrowserRouter>
