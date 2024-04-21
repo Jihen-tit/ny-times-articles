@@ -21,7 +21,9 @@ export const ArticleDetails = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(loadArticlesList())
+        if (!articles) {
+            dispatch(loadArticlesList())
+        }
     }, [])
 
     useEffect(() => {
@@ -31,7 +33,7 @@ export const ArticleDetails = () => {
                 setSelectedArticle(articleFound)
             }
         }
-    }, [articles])
+    }, [articles, params.id])
 
     return (
         <section className={'article-details'}>

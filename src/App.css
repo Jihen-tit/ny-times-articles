@@ -7,3 +7,38 @@
     text-align: center;
     margin-bottom: 60px;
 }
+ /**** Article card
+  ***********************************/
+.card-img-top {
+    aspect-ratio: 1.5;
+}
+
+div.card-img-top {
+    background-color: gray;
+}
+
+.card-body b,
+.card-body p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+.card-body b {
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+}
+
+.card-body p {
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+}
+
+.card-body button {
+    padding: 0;
+    margin-left: auto;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #0074D9;
+    text-decoration: underline;
+}

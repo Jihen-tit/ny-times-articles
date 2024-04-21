@@ -12,7 +12,7 @@ export const ArticleDetailsPresentational = (props: { article: Article }) => {
 
                 <div className={"col-6"}>
                     {props.article.images &&
-                        <img className="card-img-top" src={props.article.images[2]} alt="Card image cap" data-testid={"article-image"}/>}
+                        <img className="card-img-top" src={props.article.images[2]} alt={props.article.title} data-testid={"article-image"}/>}
                 </div>
             </div>
         </div>

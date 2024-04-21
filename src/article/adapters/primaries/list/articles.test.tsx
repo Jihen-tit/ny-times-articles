@@ -1,15 +1,16 @@
 import { render, screen } from "@testing-library/react";
 import { ArticlesContainer } from "./articles.container";
 import { ArticleBuilder } from "../../../domain/entities/article.builder";
+import { createMemoryRouter, RouterProvider } from "react-router-dom";
 
 describe("Articles container", () => {
     it("should render only the header", () => {
-        render(
-            <ArticlesContainer loading={false}
-                               error={undefined}
-                               articles={undefined}
-                               loadArticles={jest.fn()}/>
-        );
+        const router = createMemoryRouter([{path: '/',element:<ArticlesContainer loading={false}
+                                                                                 error={undefined}
+                                                                                 articles={undefined}
+                                                                                 loadArticles={jest.fn()}/>}])
+        render(<RouterProvider router={router} />)
+
         const title = screen.getByRole("heading");
         const loading = screen.queryByTestId("loading");
         const articles = screen.queryAllByTestId("article");
@@ -19,12 +20,12 @@ describe("Articles container", () => {
     });
 
     it("should render header and loading component", () => {
-        render(
-            <ArticlesContainer loading={true}
-                               error={undefined}
-                               articles={undefined}
-                               loadArticles={jest.fn()}/>
-        );
+        const router = createMemoryRouter([{path: '/',element:<ArticlesContainer loading={true}
+                                                                                 error={undefined}
+                                                                                 articles={undefined}
+                                                                                 loadArticles={jest.fn()}/>}])
+        render(<RouterProvider router={router} />)
+
         const title = screen.getByRole("heading");
         const loading = screen.queryByTestId("loading");
         const articles = screen.queryAllByTestId("article");
@@ -47,12 +48,12 @@ describe("Articles container", () => {
                 .withDescription("Article 2 description")
                 .build()
         ]
-        render(
-            <ArticlesContainer loading={false}
-                               error={undefined}
-                               articles={mockData}
-                               loadArticles={jest.fn()}/>
-        );
+        const router = createMemoryRouter([{path: '/',element:<ArticlesContainer loading={false}
+                                                                                 error={undefined}
+                                                                                 articles={mockData}
+                                                                                 loadArticles={jest.fn()}/>}])
+        render(<RouterProvider router={router} />)
+
         const title = screen.getByRole("heading");
         const loading = screen.queryByTestId("loading");
         const articles = screen.queryAllByTestId("article");
@@ -74,12 +75,12 @@ describe("Articles container", () => {
                 .withDescription("Article 2 description")
                 .build()
         ]
-        render(
-            <ArticlesContainer loading={false}
-                               error={undefined}
-                               articles={mockData}
-                               loadArticles={jest.fn()}/>
-        );
+        const router = createMemoryRouter([{path: '/',element:<ArticlesContainer loading={false}
+                                                                                 error={undefined}
+                                                                                 articles={mockData}
+                                                                                 loadArticles={jest.fn()}/>}])
+        render(<RouterProvider router={router} />)
+
         const title = screen.getByRole("heading");
         const loading = screen.queryByTestId("loading");
         const articles = screen.queryAllByTestId("article");

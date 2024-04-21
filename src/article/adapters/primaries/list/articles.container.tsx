@@ -20,7 +20,7 @@ export class ArticlesContainer extends PureComponent<Props> {
         return (
             <section className={'articles-page'}>
                 <div className={"container"}>
-                    <h1>NY Times Popular articles</h1>
+                    <h1 data-testid="listing-title">NY Times Popular articles</h1>
 
                     {this.props.loading && <LoadingPresentational/>}
 

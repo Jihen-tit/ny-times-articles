@@ -6,7 +6,6 @@ export class ArticleMapper {
 
     static mapDataToArticlesList(articles: ArticleDTO[]): Article[] {
         return articles.map(item => {
-            console.log(item.media)
             const articleBuilder = new ArticleBuilder()
                 .withId(item.id.toString())
                 .withTitle(item.title)
