@@ -11,9 +11,9 @@ describe("Article Details", () => {
                 .build()
 
         render(<ArticlePresentational article={mockData}/>);
-        const title = screen.queryByTestId("product-title");
-        const description = screen.queryByTestId("product-description");
-        const image = screen.queryByTestId("product-image");
+        const title = screen.queryByTestId("article-title");
+        const description = screen.queryByTestId("article-description");
+        const image = screen.queryByTestId("article-image");
         expect(title).toBeInTheDocument();
         expect(description).toBeInTheDocument();
         expect(image).toBeNull();
@@ -28,9 +28,9 @@ describe("Article Details", () => {
             .build()
 
         render(<ArticlePresentational article={mockData}/>);
-        const title = screen.queryByTestId("product-title");
-        const description = screen.queryByTestId("product-description");
-        const image = screen.queryByTestId("product-image");
+        const title = screen.queryByTestId("article-title");
+        const description = screen.queryByTestId("article-description");
+        const image = screen.queryByTestId("article-image");
         expect(title).toBeInTheDocument();
         expect(description).toBeInTheDocument();
         expect(image).toBeInTheDocument();

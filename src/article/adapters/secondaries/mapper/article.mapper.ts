@@ -8,7 +8,7 @@ export class ArticleMapper {
         return articles.map(item => {
             console.log(item.media)
             const articleBuilder = new ArticleBuilder()
-                .withId(item.id)
+                .withId(item.id.toString())
                 .withTitle(item.title)
                 .withDescription(item.abstract)
 
