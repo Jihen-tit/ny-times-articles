@@ -31,6 +31,11 @@ Launches the test runner in the interactive watch mode and generates coverage re
 
 This will open Cypress Launchpad of the project.
 
+### `npm run lint`
+
+Launches eslint on all .tsx and .ts files.\
+It detects possible errors in your code.
+
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
