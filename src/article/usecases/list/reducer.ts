@@ -6,8 +6,8 @@ import { LoadArticlesListState } from "../../config/state";
 
 const initialState: LoadArticlesListState = {
     loading: false,
-    data   : [],
-    error  : 'undefined'
+    data   : undefined,
+    error  : undefined
 }
 
 export const loadArticlesListReducer = (state = initialState, action: LoadArticlesListActionTypes): LoadArticlesListState => {
