@@ -1,10 +1,10 @@
 export interface ArticleDTO {
-    id: string;
+    id: number;
     title: string;
     abstract: string;
-    media: ArticleImagesDTO[]
+    media: ArticleMediaDTO[]
 }
-export interface ArticleImagesDTO {
+export interface ArticleMediaDTO {
     "media-metadata": ArticleImageDTO[]
 }
 export interface ArticleImageDTO {
